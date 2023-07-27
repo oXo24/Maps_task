@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    public static String WeightMeasure = "kg";
+    public static final String WEIGHTMEASURE = "kg";
 
     public static void main(String[] args) {
 
@@ -37,7 +37,7 @@ public class Main {
         boolean hasContain = map.containsKey(code);
         if (hasContain) {
             Integer weight = map.get(code);
-            return code + " = " + weight + " " + WeightMeasure;
+            return code + " = " + weight + " " + WEIGHTMEASURE;
         } else
             return code + " not found!";
     }

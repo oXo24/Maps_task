@@ -7,6 +7,15 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("Initial data:");
+        displayProductList(getData());
+
+        System.out.println("\nUpdated data:");
+        displayProductList(updateProductList(updateProductList(getData(), "plum", 15), "banana", 14));
+    }
+
+    private static Map<String, Integer> getData() {
+
         Map<String, Integer> productList = new HashMap<>();
         productList.put("orange", 12);
         productList.put("banana", 25);
@@ -14,18 +23,12 @@ public class Main {
         productList.put("pineapple", 13);
         productList.put("grape", 9);
 
-        System.out.println("Initial data:");
-        displayProductList(productList);
-
-        updateProductList(productList, "banana", 14);
-        updateProductList(productList, "plum", 15);
-
-        System.out.println("\nUpdated data:");
-        displayProductList(productList);
+        return productList;
     }
 
-    private static void updateProductList(Map<String, Integer> productList, String productName, int quantity) {
+    private static Map<String, Integer> updateProductList(Map<String, Integer> productList, String productName, int quantity) {
         productList.put(productName, quantity);
+        return productList;
     }
 
     private static void displayProductList(Map<String, Integer> productList) {
